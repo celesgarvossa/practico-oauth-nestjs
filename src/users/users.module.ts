@@ -5,6 +5,6 @@ import { UsersController } from './users.controller';
 @Module({
   controllers: [UsersController],
   providers: [UsersService],
-  exports: [UsersService], // lo comparte para que lo use AuthModule
+  exports: [UsersService], 
 })
 export class UsersModule {}

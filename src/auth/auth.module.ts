@@ -10,9 +10,9 @@ import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [
-    UsersModule, // para usar UsersService
+    UsersModule, 
     PassportModule,
-    // Configura el JWT: la clave secreta sale del .env y el token dura 1 hora
+    
     JwtModule.registerAsync({
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({

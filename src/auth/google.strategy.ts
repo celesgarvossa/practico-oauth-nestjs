@@ -19,9 +19,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     });
   }
 
-  // Google llama a este método después de que el usuario acepta el login.
-  // En el ejemplo de clase se hacía done(null, profile); acá además
-  // guardamos el usuario en la base de datos. Lo que retornamos queda en req.user
+
   async validate(
     accessToken: string,
     refreshToken: string,

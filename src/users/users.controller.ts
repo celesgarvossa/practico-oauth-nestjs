@@ -8,8 +8,7 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
-  // Ruta PRIVADA: solo responde si se envía un JWT válido
-  // Header: Authorization: Bearer <token>
+  
   @Get('me')
   @UseGuards(JwtAuthGuard)
   getProfile(@Req() req: Request) {

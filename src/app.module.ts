@@ -7,7 +7,7 @@ import { AppController } from './app.controller';
 
 @Module({
   imports: [
-    // Lee el archivo .env y deja las variables disponibles en toda la app
+   
     ConfigModule.forRoot({ isGlobal: true }),
     DatabaseModule,
     UsersModule,

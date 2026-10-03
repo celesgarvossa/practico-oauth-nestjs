@@ -8,23 +8,21 @@ import { AuthService } from './auth.service';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  // Login con Google: el guard redirige a la pantalla de Google
-  // (equivale a passport.authenticate('google') del ejemplo de clase)
   @Get('google')
   @UseGuards(AuthGuard('google'))
   googleAuth() {
-    // No hace falta código: el guard se encarga de la redirección
+  
   }
 
-  // Callback de Google: vuelve acá después del login
+
   @Get('google/redirect')
   @UseGuards(AuthGuard('google'))
   @Header('Content-Type', 'text/html')
   googleAuthRedirect(@Req() req: Request): string {
-    // req.user es el usuario que devolvió GoogleStrategy.validate()
+   
     const user = req.user as User;
 
-    // En clase se guardaba el usuario en la sesión; acá generamos un JWT
+   
     const token = this.authService.generateJwt(user);
 
     return `

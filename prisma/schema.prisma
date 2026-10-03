@@ -9,12 +9,12 @@ datasource db {
 
 model User {
   id Int      @id @default(autoincrement())
-  email String   @unique // un solo usuario por email (evita cuentas duplicadas)
+  email String   @unique 
   firstName String?
   lastName String?
-  picture String? // URL de la foto de perfil de Google
-  googleId String?  @unique // null si el usuario se registró de forma local
-  password String? // solo para registro local; null en usuarios de Google
+  picture String? 
+  googleId String?  @unique 
+  password String? 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
